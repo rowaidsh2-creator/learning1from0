@@ -11,16 +11,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearningFrom0">
+        <!-- شاشة الترحيب (تفتح أولاً عند تشغيل التطبيق) -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".WelcomeActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- شاشة المتجر (تفتح بعد الضغط على الزر) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- شاشة سلة المشتريات -->
+        <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+
+        <!-- شاشة تفاصيل العطر -->
+        <activity
+            android:name=".PerfumeInfo"
+            android:exported="false" />
     </application>
 
 </manifest>

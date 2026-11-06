@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <!-- عنوان التطبيق -->
@@ -13,58 +13,36 @@
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aura Perfume Store"
+        android:text="قائمة عطور Aura 🌸"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="32dp" />
-
-    <!-- اسم العطر -->
-    <TextView
-        android:id="@+id/textPerfumeName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Perfume Name"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textTitle"
-        android:layout_marginTop="48dp" />
-
-    <!-- الشركة المصنعة -->
-    <TextView
-        android:id="@+id/textPerfumeBrand"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Brand"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textPerfumeName"
-        android:layout_marginTop="8dp" />
-
-    <!-- السعر -->
-    <TextView
-        android:id="@+id/textPerfumePrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Price"
-        android:textSize="18sp"
-        android:textColor="@android:color/holo_green_dark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textPerfumeBrand"
         android:layout_marginTop="16dp" />
 
-    <!-- التقييم -->
-    <TextView
-        android:id="@+id/textPerfumeRating"
+    <!-- قائمة العطور الساحبة (RecyclerView) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPerfumes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/btnReturnToHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTitle"
+        tools:listitem="@layout/item_perfume" />
+
+    <!-- زر الرجوع للرئيسية -->
+    <Button
+        android:id="@+id/btnReturnToHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rating"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textPerfumePrice"
-        android:layout_marginTop="8dp" />
+        android:text="الرجوع للرئيسية ⬅️"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

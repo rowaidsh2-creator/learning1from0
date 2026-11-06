@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".PerfumeInfo">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/perfumeInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <!-- صورة العطر الكبيرة -->
+        <ImageView
+            android:id="@+id/imagePerfumeDetail"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_launcher_foreground"
+            android:contentDescription="صورة العطر"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- اسم العطر -->
+        <TextView
+            android:id="@+id/textPerfumeDetailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="اسم العطر"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imagePerfumeDetail"
+            android:layout_marginTop="16dp" />
+
+        <!-- الماركة -->
+        <TextView
+            android:id="@+id/textPerfumeDetailBrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="الماركة العالمية"
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textPerfumeDetailName"
+            android:layout_marginTop="4dp" />
+
+        <!-- السعر والتقييم -->
+        <LinearLayout
+            android:id="@+id/priceRatingLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textPerfumeDetailBrand">
+
+            <TextView
+                android:id="@+id/textPerfumeDetailPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$0.00"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_green_dark"
+                android:layout_marginEnd="16dp" />
+
+            <TextView
+                android:id="@+id/textPerfumeDetailRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐ 0.0"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- المكونات ووصف العطر -->
+        <TextView
+            android:id="@+id/textDescriptionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="مكونات ووصف العطر 🌸:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/priceRatingLayout"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:id="@+id/textPerfumeDetailDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="وصف العطر ومكوناته الفاخرة يظهر هنا بالكامل..."
+            android:textSize="15sp"
+            android:textColor="@android:color/black"
+            android:lineSpacingExtra="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textDescriptionTitle"
+            android:layout_marginTop="8dp" />
+
+        <!-- آراء المشتريين -->
+        <TextView
+            android:id="@+id/textReviewsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="آراء وتقييمات العملاء 💬:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textPerfumeDetailDescription"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/textPerfumeReviews"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="• 'عطر ثباته عالي وريحة فخمة جداً!' - أحمد\n• 'أنصح فيه لجميع المناسبات' - سارة"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:lineSpacingExtra="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textReviewsTitle"
+            android:layout_marginTop="8dp" />
+
+        <!-- أزرار الإجراءات (أضف للسلة على اليمين والرجوع على اليسار) -->
+        <LinearLayout
+            android:id="@+id/bottomButtonsLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textPerfumeReviews">
+
+            <!-- زر الرجوع على اليسار -->
+            <Button
+                android:id="@+id/btnDetailBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الرجوع ⬅️"
+                android:layout_marginEnd="16dp" />
+
+            <!-- زر أضف للسلة على اليمين -->
+            <Button
+                android:id="@+id/btnDetailAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="أضف للسلة 🛒" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
